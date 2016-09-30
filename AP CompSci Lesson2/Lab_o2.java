@@ -5,10 +5,12 @@ public class Lab_o2
 			int num1 = 4;
 	        int num2 = 6;
 	        System.out.println(num1 * num2);
-			String first = "Natasha";
-			String second = " Del Mar";
-			String third = " CA 92014";
-			System.out.println(first + second + third);
+			String first = "Torrey Pines High School";
+			String second = "\n2468";
+			String third = " Del Mar Heights Road";
+			String fourth = "\nSan Diego";
+			String fifth = " CA 92014";
+			System.out.println(first + second + third + fourth +fifth);
 			int l = 6;
 			int w = 8;
 			int h = 4;
