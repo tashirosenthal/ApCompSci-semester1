@@ -6,7 +6,7 @@ public class Retmethods
 		int n2 = 2;
 		int n3 = 12;
 		double avg = average.calcAvg(n1, n2,n3);
-		System.out.println("The volume of your cube is" + avg);
+		System.out.println("The average of your numbers is " + avg);
 		
 		
 		
