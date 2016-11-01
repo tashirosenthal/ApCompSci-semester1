@@ -11,11 +11,11 @@ public class subwoofer
 		double width = kb.nextDouble();
 		System.out.println("What is the length of your subwoofer box?");
 		double length = kb.nextDouble();
-		System.out.println("The Volume of your box is: " + box.volume(height, width, length));
+		System.out.println("The volume of your box is: " + box.volume(height, width, length));
 	}
 	public double volume(double height, double width, double length)
 	{
-		return (height*width*length);
+		return (height*width*length)/1728 ;
 	}
 	
 }
