@@ -25,7 +25,7 @@ public class GPAcalc
 		System.out.println("Please enter your PE grade: ");
 		String PE = kb.nextLine();
 	
-		double gPoints = (calcPoints(history) + calcPoints(math) + calcPoints(science) + calcPoints(english) +calcPoints(spanish) +calcPoints(art) + calcPoints(PE))/7.0;
+		double gPoints = calcPoints
 		System.out.printf("Your GPA is: %.2f" ,gPoints);
 	}
 	public static double calcPoints(String grade)
