@@ -1,4 +1,4 @@
-public class Lesson5ex1
+public class diceroll
 {
 	public static void main(String[]args)
 	{

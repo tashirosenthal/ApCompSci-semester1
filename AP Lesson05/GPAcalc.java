@@ -3,13 +3,9 @@ public class GPAcalc
 {
 	public static void main(String[]args)
 	{
+	
 	    Scanner kb = new Scanner(System.in);
-		GPAcalc grade = new GPAcalc();
-		double A = 4.0;
-		double B = 3.0;
-		double C = 2.0;
-		double D = 1.0;
-		double f = 0.0;
+		GPAcalc gpoints = new GPAcalc();
 		System.out.println("Please enter your history grade: ");
 		String history = kb.nextLine();
 		System.out.println("Please enter your math grade: ");
@@ -25,11 +21,12 @@ public class GPAcalc
 		System.out.println("Please enter your PE grade: ");
 		String PE = kb.nextLine();
 	
-		double gPoints = calcPoints
-		System.out.printf("Your GPA is: %.2f" ,gPoints);
+		double gPoints = calcPoints(history) + calcPoints(math) + calcPoints(science) + calcPoints(english) + calcPoints(spanish) + calcPoints(art) +calcPoints(PE);
+		System.out.printf("Your GPA is: %.2f" ,gPoints/7);
 	}
 	public static double calcPoints(String grade)
 	{
+		double gPoints = 0; 
 		if(grade.equals("A"))
 			return 4.0;
 		if(grade.equals("B"))
@@ -40,6 +37,7 @@ public class GPAcalc
 			return 1.0;
 		if(grade.equals("F"))
 			return 0.0;
-		return 0.0;
+		return gPoints;
+		
 	}
 }
