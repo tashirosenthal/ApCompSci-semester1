@@ -2,9 +2,10 @@ import java.util.Scanner;
 public class avgdigits
 {
 	static int number;
-	static int avg = 0;
 	static int digits = 0;
-	static int sum = 0;
+	static int avg = 0;
+
+
 	
 	public static void main(String[]args)
 		{
@@ -19,11 +20,12 @@ public class avgdigits
 			int num = number;
 			while(num > 0)
 			{
-				digits += 1;
+				digits ++;
 				avg += num % 10;
 				num /= 10;
-				avg/=digits;
+			
 			}
+			avg /= digits;
 		
 		}
 		
