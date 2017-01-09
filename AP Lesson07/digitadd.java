@@ -16,7 +16,7 @@ public class digitadd
 			int num = number;
 			while(num > 0)
 			{
-				sum += (number % 10);
+				sum += (num % 10);
 				num /= 10;
 			}
 		}
