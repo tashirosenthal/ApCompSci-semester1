@@ -8,14 +8,13 @@ public class findthez
 		fillArray();
 		System.out.println("For the words: ");
 		printArray();
-		System.out.println("Only" + hasZs() + "contain(s) the letter z");
+		System.out.println("Only " + hasZs() + "contain(s) the letter z");
 	}
-	public static String fillArray();
+	public static void fillArray()
 	{
 		Scanner kb = new Scanner(System.in);
-		int i = 0;
 		System.out.println("Please enter 5 words");
-		for(String word : words)
+		for(int i = 0; i < words.length; i++)
 		{
 			words[i] = kb.next();
 		}
@@ -27,14 +26,14 @@ public class findthez
 				System.out.println(word + " ");
 			}
 	}
-	public static String hasZs();
+	public static String hasZs()
 	{
 		String zs = "";
 		for(String word : words)
 		{
-			if(word.indexOf("z") > 0)
+			if(word.indexOf("z") >= 0)
 			{
-				zs++;
+				zs += word + " ";
 			}
 		}
 		return zs;
