@@ -13,7 +13,6 @@ public class PC extends GameSystem
 		return "Keyboard and Mouse";
 	}
 	public String toString()
-	
 	{
 		return "Platform " + super.getPlatform() +
 		" Serial #:" + super.getSerialNo() +
