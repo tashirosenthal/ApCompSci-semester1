@@ -20,6 +20,4 @@ public class GMC implements Location
 	{
 		return location;
 	}
-	
-	
 }
