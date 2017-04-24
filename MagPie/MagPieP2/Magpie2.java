@@ -74,7 +74,7 @@ public class Magpie2
 		int psnOfYou = findKeyword (phrase, "you", psnOfI);
 		
 		String restOfStatement = phrase.substring(psnOfYou + 3);
-		return "Why do you " + restOfStatement + " me?";
+		return "What would it mean to " + restOfStatement;
 	}
 	private String transformYouMeStatement(String statement)
 	{
