@@ -1,14 +1,5 @@
-/**
- * This class contains class (static) methods
- * that will help you test the Picture class 
- * methods.  Uncomment the methods and the code
- * in the main to test.
- * 
- * @author Barbara Ericson 
- */
 public class PictureTester
 {
-  /** Method to test zeroBlue */
   public static void testZeroBlue()
   {
     Picture beach = new Picture("beach.jpg");
@@ -16,7 +7,41 @@ public class PictureTester
     beach.zeroBlue();
     beach.explore();
   }
-  
+  public static void testNegate()
+  {
+	Picture beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.negate();
+    beach.explore();
+  }
+  public static void testKeepOnlyBlue()
+  {
+	Picture beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.keepOnlyBlue();
+    beach.explore();
+  } 
+   public static void testKeepOnlyRed()
+  {
+	Picture beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.keepOnlyRed();
+    beach.explore();
+  }
+   public static void testKeepOnlyGreen()
+  {
+	Picture beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.keepOnlyGreen();
+    beach.explore();
+  }
+    public static void testGrayscale()
+  {
+	Picture beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.grayscale();
+    beach.explore();
+  }
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
@@ -24,6 +49,34 @@ public class PictureTester
     caterpillar.explore();
     caterpillar.mirrorVertical();
     caterpillar.explore();
+  }
+  public static void testMirrorHorizontal()
+  {
+	Picture bob = new Picture("redMotorcycle.jpg");
+    bob.explore();
+    bob.mirrorHorizontal();
+    bob.explore();
+  } 
+  public static void testmirrorVerticalRightToLeft()
+  {
+	Picture bob = new Picture("redMotorcycle.jpg");
+    bob.explore();
+    bob.mirrorVerticalRightoLeft();
+    bob.explore();
+  }
+  public static void testHorizonalBotToTop()
+  {
+	 Picture bob = new Picture("redMotorcycle.jpg");
+	 bob.explore();
+	 bob.mirrorHorizontalBottomToTop();
+	 bob.explore();
+  }
+  public static void testMirrorDiagonal()
+  {
+	  Picture beach = new Picture("beach.jpg");
+	  beach.explore();
+	  beach.mirrorDiagonal();
+	  beach.explore();
   }
   
   /** Method to test mirrorTemple */
@@ -34,7 +87,20 @@ public class PictureTester
     temple.mirrorTemple();
     temple.explore();
   }
-  
+  public static void testMirrorArms()
+  {
+	  Picture snow = new Picture("snowman.jpg");
+	  snow.explore();
+	  snow.mirrorArms();
+	  snow.explore();
+  }
+  public static void testMirrorGull()
+  {
+	Picture gull = new Picture("seagull.jpg");
+    gull.explore();
+    gull.mirrorGull();
+    gull.explore();
+  }
   /** Method to test the collage method */
   public static void testCollage()
   {
@@ -42,7 +108,13 @@ public class PictureTester
     canvas.createCollage();
     canvas.explore();
   }
-  
+    /** Method to test the myCollage method */
+  public static void testMyCollage()
+  {
+    Picture canvas = new Picture("koala.jpg");
+    canvas.myCollage();
+    canvas.explore();
+  }
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
@@ -55,10 +127,10 @@ public class PictureTester
     * method in Java */
   public static void main(String[] args)
   {
-    // uncomment a call here to run a test
-    // and comment out the ones you don't want
-    // to run
-    testZeroBlue();
+	//testHorizonalBotToTop();
+	//testmirrorVerticalRightToLeft();
+	//testMirrorHorizontal(); 
+    //testZeroBlue();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
@@ -67,11 +139,12 @@ public class PictureTester
     //testFixUnderwater();
     //testMirrorVertical();
     //testMirrorTemple();
-    //testMirrorArms();
+    testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
-    //testCopy();
+	//testMyCollage();
+    //testCopy2();
     //testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
