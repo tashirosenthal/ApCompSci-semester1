@@ -92,9 +92,9 @@ public class Picture extends SimplePicture
     {
       for (Pixel pixelObj : rowArray)
       {
-        pixelObj.setRed(pixelObj.getRed() - 255);
-		pixelObj.setGreen(pixelObj.getGreen() - 255);
-		pixelObj.setBlue(pixelObj.getBlue() - 255);
+        pixelObj.setRed(255 - pixelObj.getRed();
+		255 - pixelObj.setGreen(pixelObj.getGreen());
+		255 - pixelObj.setBlue(pixelObj.getBlue());
       }
     }
   }
@@ -113,85 +113,7 @@ public class Picture extends SimplePicture
       }
     }
   }
-  
-  public void fixUnderwater()
-  {
-    Pixel[][] pixels = this.getPixels2D();
-    
-    int redAverage = 0;
-    int greenAverage = 0;
-    int blueAverage = 0;
-    int totalPixels = 0;
-    
-    int maxRed = 0;
-    int minRed = 255;
-    int maxGreen = 0;
-    int minGreen = 255;
-    int maxBlue = 0;
-    int minBlue = 255;
-    
-    for (int row = 26; row < 36; row++)
-    {
-        for (int col = 178; col < 198; col++)
-        {
-            totalPixels++;
-            
-            Pixel myPixel = pixels[row][col];
-            
-            redAverage += myPixel.getRed();
-            greenAverage += myPixel.getGreen();
-            blueAverage += myPixel.getBlue();
-            
-            if (myPixel.getRed() > maxRed) { maxRed = myPixel.getRed(); }
-            if (myPixel.getRed() < minRed) { minRed = myPixel.getRed(); }
-            if (myPixel.getGreen() > maxGreen) { maxGreen = myPixel.getGreen(); }
-            if (myPixel.getGreen() < minGreen) { minGreen = myPixel.getGreen(); }
-            if (myPixel.getBlue() > maxBlue) { maxBlue = myPixel.getBlue(); }
-            if (myPixel.getGreen() < minBlue) { minBlue = myPixel.getBlue(); }
-            
-        }
-    }
-    
-    redAverage = redAverage / totalPixels;
-    greenAverage = greenAverage / totalPixels;
-    blueAverage = blueAverage / totalPixels;
-    
-    Color averageColor = new Color(redAverage, greenAverage, blueAverage);
-    
-    int redRange = (maxRed - minRed);
-    int greenRange = (maxGreen - minGreen);
-    int blueRange = (maxBlue - minBlue);
-    
-    int redDistance = redRange;
-    int greenDistance = greenRange;
-    int blueDistance = blueRange;
-    
-    double maxDistance = Math.sqrt(redDistance * redDistance +
-                                   greenDistance * greenDistance +
-                                   blueDistance * blueDistance);
-    
-    double tolerance = 1.7; // higher tolerance means more pixels will be identified as "fish"
-    
-    // changes the image based on calculated distance from sample value
-    for (int row = 0; row < pixels.length; row++) // Pixel[] rowArray : pixels)
-    {
-      for (int col = 0; col < pixels[0].length; col++) // Pixel pixelObj : rowArray)
-      {
-          Pixel myPixel = pixels[row][col]; //
-          
-          boolean closeEnough = myPixel.colorDistance(averageColor) < maxDistance * tolerance; // stopped here, define this***
-          // System.out.println(myPixel.colorDistance(averageColor));
-          if (closeEnough)
-          {
-              myPixel.setBlue(myPixel.getBlue() + 50);
-          }
-          else
-          {
-              myPixel.setBlue(myPixel.getBlue() - 50);
-          }
-      }
-    }
-  }
+
 	public void mirrorVertical()
   {
     Pixel[][] pixels = this.getPixels2D();
@@ -461,6 +383,29 @@ public class Picture extends SimplePicture
           leftPixel.setColor(Color.WHITE);
       }
     }
+    
+    public void edgeDetectionB(int edgeDist)
+    {
+    Pixel PPixel = null;
+    Pixel rightPixel = null;
+    Pixel bottomPixel = null;
+    Pixel[][] pixels = this.getPixels2D();
+    Color PColor = null;
+    for (int row = 0; row < pixels.length; row++)
+    {
+      for (int col = 0; 
+           col < pixels[0].length-1; col++)
+      {
+        PPixel = pixels[row][col];
+        rightPixel = pixels[row][col-1];
+	bottomPixel = pixels[row + 1][col]
+        PColor = PPixel.getColor();
+        if (rightPixel.colorDistance(PColor) > edgeDist
+	|| bottomPixel.colorDistance(PColor) > edgeDist)
+          PPixel.setColor(Color.BLACK);
+        else
+          PPixel.setColor(Color.WHITE);
+      }
   }
   
   /* Main method for testing - each class in Java can have a main 
