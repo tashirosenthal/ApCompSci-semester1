@@ -31,6 +31,6 @@ public class APlab04_01
 	}
      public void format(String first, String last)
 	 {
-		    System.out.printf("\n%10s \t%40s", first, last );
+		    System.out.printf("\n%10s \t%50s", first, last );
 	 }
 }
