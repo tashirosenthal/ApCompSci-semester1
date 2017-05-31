@@ -42,6 +42,7 @@ public class PictureTester
     beach.grayscale();
     beach.explore();
   }
+<<<<<<< HEAD
 	public static void testFixUnderwater()
 	{
 		Picture beach = new Picture("water.jpg");
@@ -49,6 +50,8 @@ public class PictureTester
 		beach.fixUnderwater();
 		beach.explore();
 	}
+=======
+>>>>>>> 5ab3144475643b32b8d76012fd700eaf98c587cf
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
@@ -123,11 +126,18 @@ public class PictureTester
     canvas.explore();
   }
   /** Method to test edgeDetection */
+<<<<<<< HEAD
   public static void testEdgeDetection2()
   {
     Picture swan = new Picture("swan.jpg");
 	swan.explore();
     swan.edgeDetection2(20);
+=======
+  public static void testEdgeDetection()
+  {
+    Picture swan = new Picture("swan.jpg");
+    swan.edgeDetection(10);
+>>>>>>> 5ab3144475643b32b8d76012fd700eaf98c587cf
     swan.explore();
   }
   
@@ -135,7 +145,10 @@ public class PictureTester
     * method in Java */
   public static void main(String[] args)
   {
+<<<<<<< HEAD
 	//testFixUnderwater();
+=======
+>>>>>>> 5ab3144475643b32b8d76012fd700eaf98c587cf
 	//testHorizonalBotToTop();
 	//testmirrorVerticalRightToLeft();
 	//testMirrorHorizontal(); 
@@ -148,14 +161,22 @@ public class PictureTester
     //testFixUnderwater();
     //testMirrorVertical();
     //testMirrorTemple();
+<<<<<<< HEAD
     //testMirrorArms();
+=======
+    testMirrorArms();
+>>>>>>> 5ab3144475643b32b8d76012fd700eaf98c587cf
     //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
 	//testMyCollage();
     //testCopy2();
     //testEdgeDetection();
+<<<<<<< HEAD
     testEdgeDetection2();
+=======
+    //testEdgeDetection2();
+>>>>>>> 5ab3144475643b32b8d76012fd700eaf98c587cf
     //testChromakey();
     //testEncodeAndDecode();
     //testGetCountRedOverValue(250);

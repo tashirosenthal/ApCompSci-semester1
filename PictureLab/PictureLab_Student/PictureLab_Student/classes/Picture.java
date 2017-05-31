@@ -92,6 +92,7 @@ public class Picture extends SimplePicture
     {
       for (Pixel pixelObj : rowArray)
       {
+<<<<<<< HEAD
         pixelObj.setRed(255- pixelObj.getRed());
 		pixelObj.setGreen(255 - pixelObj.getGreen());
 		pixelObj.setBlue(255 - pixelObj.getBlue());
@@ -113,6 +114,14 @@ public class Picture extends SimplePicture
     }
   }
   }
+=======
+        pixelObj.setRed(255 - pixelObj.getRed();
+		255 - pixelObj.setGreen(pixelObj.getGreen());
+		255 - pixelObj.setBlue(pixelObj.getBlue());
+      }
+    }
+  }
+>>>>>>> 5ab3144475643b32b8d76012fd700eaf98c587cf
   
   public void grayscale()
   {
@@ -128,7 +137,11 @@ public class Picture extends SimplePicture
       }
     }
   }
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 5ab3144475643b32b8d76012fd700eaf98c587cf
 	public void mirrorVertical()
   {
     Pixel[][] pixels = this.getPixels2D();
@@ -194,7 +207,11 @@ public class Picture extends SimplePicture
       }
   }
   
+<<<<<<< HEAD
   public void mirrorDiagonal() 
+=======
+  public void mirrorDiagonal() // mirrors from top right to bottom left
+>>>>>>> 5ab3144475643b32b8d76012fd700eaf98c587cf
   {
       Pixel[][] pixels = this.getPixels2D();
       Pixel topRightPixel = null;
@@ -207,12 +224,22 @@ public class Picture extends SimplePicture
       {
           for (int col = row; col < maxLength; col++)
           {
+<<<<<<< HEAD
               topRightPixel = pixels[col][row];
               bottomLeftPixel = pixels[row][col];
+=======
+              topRightPixel = pixels[row][col];
+              bottomLeftPixel = pixels[col][row];
+>>>>>>> 5ab3144475643b32b8d76012fd700eaf98c587cf
               bottomLeftPixel.setColor(topRightPixel.getColor());
           }
       }
   }
+<<<<<<< HEAD
+=======
+  
+  /** Mirror just part of a picture of a temple */
+>>>>>>> 5ab3144475643b32b8d76012fd700eaf98c587cf
    public void mirrorTemple()
   {
     int mirrorPoint = 276;
@@ -221,14 +248,25 @@ public class Picture extends SimplePicture
     int count = 0;
     Pixel[][] pixels = this.getPixels2D();
     
+<<<<<<< HEAD
     for (int row = 27; row < 97; row++)
     {
+=======
+    // loop through the rows
+    for (int row = 27; row < 97; row++)
+    {
+      // loop from 13 to just before the mirror point
+>>>>>>> 5ab3144475643b32b8d76012fd700eaf98c587cf
       for (int col = 13; col < mirrorPoint; col++)
       {
         count++;
         leftPixel = pixels[row][col];      
         rightPixel = pixels[row]                       
+<<<<<<< HEAD
         [mirrorPoint - col + mirrorPoint];
+=======
+                         [mirrorPoint - col + mirrorPoint];
+>>>>>>> 5ab3144475643b32b8d76012fd700eaf98c587cf
         rightPixel.setColor(leftPixel.getColor());
       }
     }
@@ -236,7 +274,11 @@ public class Picture extends SimplePicture
   }
     public void mirrorArms()
   {
+<<<<<<< HEAD
     int mirrorPoint = 194;
+=======
+    int mirrorPoint = 193;
+>>>>>>> 5ab3144475643b32b8d76012fd700eaf98c587cf
     Pixel topPixel = null;
     Pixel bottomPixel = null;
     Pixel[][] pixels = this.getPixels2D();
@@ -252,7 +294,11 @@ public class Picture extends SimplePicture
       }
     }
     
+<<<<<<< HEAD
     int mirrorPoint2 = 194;
+=======
+    int mirrorPoint2 = 198;
+>>>>>>> 5ab3144475643b32b8d76012fd700eaf98c587cf
     Pixel topPixel2 = null;
     Pixel bottomPixel2 = null;
     
@@ -275,9 +321,16 @@ public class Picture extends SimplePicture
     Pixel leftPixel = null;
     Pixel[][] pixels = this.getPixels2D();   
     
+<<<<<<< HEAD
     for (int row = 236; row < 324; row++)
     {
       for (int col = 240; col < mirrorPoint; col++)
+=======
+    // Seagull
+    for (int row = 235; row < 323; row++)
+    {
+      for (int col = 238; col < mirrorPoint; col++)
+>>>>>>> 5ab3144475643b32b8d76012fd700eaf98c587cf
       {
         rightPixel = pixels[row][col];      
         leftPixel = pixels[row][mirrorPoint - col + mirrorPoint/3];
@@ -372,7 +425,11 @@ public class Picture extends SimplePicture
   /** Method to show large changes in color 
     * @param edgeDist the distance for finding edges
     */
+<<<<<<< HEAD
   public void edgeDetection2(int edgeDist)
+=======
+  public void edgeDetection(int edgeDist)
+>>>>>>> 5ab3144475643b32b8d76012fd700eaf98c587cf
   {
     Pixel leftPixel = null;
     Pixel rightPixel = null;
@@ -393,6 +450,7 @@ public class Picture extends SimplePicture
           leftPixel.setColor(Color.WHITE);
       }
     }
+<<<<<<< HEAD
 	Pixel bottomPixel = null;
     Color bottomColor = null;
 	for (int row = 0; row < pixels.length-1; row++)
@@ -412,3 +470,36 @@ public class Picture extends SimplePicture
   }
   
 }
+=======
+    
+    public void edgeDetectionB(int edgeDist)
+    {
+    Pixel PPixel = null;
+    Pixel rightPixel = null;
+    Pixel bottomPixel = null;
+    Pixel[][] pixels = this.getPixels2D();
+    Color PColor = null;
+    for (int row = 0; row < pixels.length; row++)
+    {
+      for (int col = 0; 
+           col < pixels[0].length-1; col++)
+      {
+        PPixel = pixels[row][col];
+        rightPixel = pixels[row][col-1];
+	bottomPixel = pixels[row + 1][col]
+        PColor = PPixel.getColor();
+        if (rightPixel.colorDistance(PColor) > edgeDist
+	|| bottomPixel.colorDistance(PColor) > edgeDist)
+          PPixel.setColor(Color.BLACK);
+        else
+          PPixel.setColor(Color.WHITE);
+      }
+  }
+  
+  /* Main method for testing - each class in Java can have a main 
+   * method 
+   */
+
+  
+} // this } is the end of class Picture, put all new methods before this
+>>>>>>> 5ab3144475643b32b8d76012fd700eaf98c587cf

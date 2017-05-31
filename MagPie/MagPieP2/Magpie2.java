@@ -7,6 +7,7 @@ public class Magpie2
 	public String getResponse(String statement)
 	{
 		String response = "";
+<<<<<<< HEAD
 		if(findKeyword(statement, "mother", 0) >= 0
 				|| findKeyword(statement, "father", 0) >= 0
 				|| findKeyword(statement, "sister", 0) >= 0
@@ -22,6 +23,23 @@ public class Magpie2
 			|| findKeyword(statement, "dog", 0) >= 0
 			|| findKeyword(statement, "fish", 0) >= 0
 			|| findKeyword(statement, "turtle", 0) >= 0)
+=======
+		if(statement.indexOf("mother") >= 0
+				|| statement.indexOf("father") >= 0
+				|| statement.indexOf("sister") >= 0
+				|| statement.indexOf("brother") >= 0)
+		{
+			response = "Tell me more about your family.";
+		}
+		if(statement.length() == 0)
+		{
+			response = "Please say something";
+		}
+		else if(statement.indexOf("cat") >= 0
+			|| statement.indexOf("dog") >= 0
+			|| statement.indexOf("fish") >= 0
+			|| statement.indexOf("turtle") >= 0)
+>>>>>>> 5ab3144475643b32b8d76012fd700eaf98c587cf
 			{
 				response = "Tell me more  about your pet.";
 			}
@@ -47,10 +65,15 @@ public class Magpie2
 			System.out.println("Okay then Bye:(");
 			System.exit(0);
 		}
+<<<<<<< HEAD
 		 
 		else
 		{
 			
+=======
+		else
+		{
+>>>>>>> 5ab3144475643b32b8d76012fd700eaf98c587cf
 			int psn = findKeyword(statement, "you", 0);
 			
 			if (psn >= 0 && findKeyword(statement, "me", psn) >= 0)
@@ -58,6 +81,7 @@ public class Magpie2
 				response = transformYouMeStatement(statement);
 			}
 			else
+<<<<<<< HEAD
 			{
 				psn =findKeyword(statement, "i" , 0);
 
@@ -72,6 +96,11 @@ public class Magpie2
 				}
 			}
 			
+=======
+			{	
+				response = getRandomResponse();
+			}
+>>>>>>> 5ab3144475643b32b8d76012fd700eaf98c587cf
 		}
 		return response;
 	}
